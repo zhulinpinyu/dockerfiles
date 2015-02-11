@@ -2,7 +2,7 @@
 # Based on ubuntu:latest, installs MongoDB following the instructions from:
 # http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
 
-FROM       ubuntu:latest
+FROM       ubuntu:14.04.1
 MAINTAINER zhulinpinyu
 
 # Installation:

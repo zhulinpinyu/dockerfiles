@@ -1,7 +1,7 @@
 # Dockerfile for installing and running Nginx
 
 # Select ubuntu as the base image
-FROM ubuntu
+FROM ubuntu:14.04.1
 
 # Install nginx
 RUN apt-get update
