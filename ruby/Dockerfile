@@ -32,3 +32,5 @@ RUN apt-get clean autoclean && \
   apt-get autoremove -y && \
   rm -fr /ruby-2.2.0 && \
   rm -rf /var/lib/{apt,dpkg,cache,log}/
+
+RUN ln -s /usr/local/bin/ruby /usr/bin/ruby
