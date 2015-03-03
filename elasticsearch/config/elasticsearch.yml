@@ -1,0 +1,10 @@
+node:
+  name: node_test_docker_es
+cluster:
+  name: cluster_test_docker_es
+
+path:
+  data: /data/data
+  logs: /data/log
+  plugins: /data/plugins
+  work: /data/work
