@@ -7,7 +7,7 @@ Build Elasticsearch Docker image
 
 1. Install [Docker](http://www.docker.com)
 2. Get [elasticsearch Dockerfile](https://github.com/zhulinpinyu/dockerfiles/blob/master/elasticsearch/Dockerfile)
-3. create self-define [config file](https://github.com/zhulinpinyu/dockerfiles/blob/master/elasticsearch/config/elasticsearch.yml) `config/elasticsearch.yml` 
+3. create self-define [config file](https://github.com/zhulinpinyu/dockerfiles/blob/master/elasticsearch/config/elasticsearch.yml) `config/elasticsearch.yml`
 4. build image use [Dockerfile](https://github.com/zhulinpinyu/dockerfiles/blob/master/elasticsearch/Dockerfile)
 
 	```
