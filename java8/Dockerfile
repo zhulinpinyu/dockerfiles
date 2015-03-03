@@ -6,6 +6,8 @@ FROM ubuntu:14.04.1
 
 MAINTAINER zhulinpinyu "lixiangmu@gmail.com"
 
+ENV REFRESHED_AT 2015-03-03
+
 RUN apt-get install -y software-properties-common
 
 # Install Java.
