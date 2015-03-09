@@ -1,10 +1,8 @@
 node:
-  name: node_test_docker_es
+  name: node_LG_01_docker_es
 cluster:
-  name: cluster_test_docker_es
+  name: cluster_LG_01_docker_es
 
 path:
-  data: /data/data
-  logs: /data/log
-  plugins: /data/plugins
-  work: /data/work
+  data: /var/opt/data/elasticsearch
+  logs: /var/opt/log/elasticsearch
