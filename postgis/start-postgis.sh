@@ -101,7 +101,7 @@ fi
 # This should show up in docker logs afterwards
 su - postgres -c "psql -l"
 
-PID=`cat /var/run/postgresql/9.3-main.pid`
+PID=`cat /var/run/postgresql/9.4-main.pid`
 kill -9 ${PID}
 echo "Postgres initialisation process completed .... restarting in foreground"
 su - postgres -c "$POSTGRES -D $DATADIR -c config_file=$CONF"
