@@ -18,7 +18,7 @@ RUN apt-get -y install ca-certificates rpl pwgen
 #-------------Application Specific Stuff ----------------------------------------------------
 
 # Next line a workaround for https://github.com/dotcloud/docker/issues/963
-RUN apt-get install -y postgresql-9.3-postgis-2.1
+RUN apt-get install -y postgresql-9.4-postgis-2.1
 
 # Start with supervisor
 ADD postgres.conf /etc/supervisor/conf.d/postgres.conf

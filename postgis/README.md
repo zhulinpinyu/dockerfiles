@@ -2,7 +2,7 @@ Build Postgis
 ===
 
 
-Postgres 9.3
+Postgres 9.4
 postgis 2.1
 
 ```
