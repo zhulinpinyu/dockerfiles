@@ -1,12 +1,15 @@
 What's include?
 ---
-
-* nginx
+DockerHub:
 * java8
 * Ruby v2.2.0
-* Redis
 * mongodb
+* geoserver
+
+Other:
+* nginx
 * kibana v4.0.0
 * elasticsearch v1.4.4
+* postgis (only setup documnet)
 
 Get Docker images please visit [DockerHub](https://registry.hub.docker.com/repos/zhulinpinyu/)
