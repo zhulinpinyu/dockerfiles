@@ -12,6 +12,7 @@ Usage:
 sudo docker pull mdillon/postgis:9.4
 sudo docker run --name postgis -v /data/postgresql/data:/var/lib/postgresql/data -d -p 5432:5432 mdillon/postgis:9.4
 ```
+> default use postgres username/password is postgres/postgres; Tool is `pgAdmin 3`
 
 ###Tool phppgadmin
 ```
