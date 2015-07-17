@@ -18,3 +18,22 @@ sudo docker run --name postgis -v /data/postgresql/data:/var/lib/postgresql/data
 ```
 sudo docker run --name="phppgadmin" --link=postgis:postgresql -d -p 9001:80 maxexcloo/phppgadmin
 ```
+
+
+###Postgresql data backup/restore from docker container
+
+
+
+####Backup data from docker container
+
+```
+sudo docker run -it -v /data/backup/postgresql:/opt --link postgis:postgres --rm mdillon/postgis:9.4 sh -c 'exec pg_dumpall -h "$POSTGRES_PORT_5432_TCP_ADDR" -p "$POSTGRES_PORT_5432_TCP_PORT" -U postgres > /opt/myback.backup'
+```
+
+####Restore data to docker container
+
+```
+sudo docker run -it -v /data/backup/postgresql:/opt --link postgis:postgres --rm mdillon/postgis:9.4 sh -c 'exec psql -h "$POSTGRES_PORT_5432_TCP_ADDR" -p "$POSTGRES_PORT_5432_TCP_PORT" -U postgres < /opt/myback.backup'
+```
+
+> Tips: /data/backup/postgresql is host machine dir
