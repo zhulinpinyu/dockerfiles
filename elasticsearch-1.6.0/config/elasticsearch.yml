@@ -2,3 +2,6 @@ node:
   name: node_01_docker_es
 cluster:
   name: cluster_01_docker_es
+path:
+  data: /data
+  logs: /logs
