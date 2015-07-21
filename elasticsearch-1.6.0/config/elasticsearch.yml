@@ -1,7 +1,4 @@
 node:
-  name: node_localgravity_01_docker_es
+  name: node_01_docker_es
 cluster:
-  name: cluster_localgravity_01_docker_es
-
-path:
-  logs: /usr/share/elasticsearch/log
+  name: cluster_01_docker_es

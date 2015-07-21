@@ -1,0 +1,5 @@
+docker run -d -p 9200:9200 -p 9300:9300 -v <data-dir>:/data zhulinpinyu/elasticsearch /elasticsearch/bin/elasticsearch -Des.config=/config/elasticsearch.yml
+
+docker run --name es -d -p 9200:9200 -p 9300:9300 -v "$PWD/config":/usr/share/elasticsearch/config -v "$PWD/data":/usr/share/elasticsearch/data elasticsearch:marvel /usr/share/elasticsearch/bin/elasticsearch
+
+docker run --name es -d -v "$PWD/data":/usr/share/elasticsearch/data elasticsearch:marvel /usr/share/elasticsearch/bin/elasticsearch
