@@ -2,9 +2,9 @@ Postgis with Kmeans Usage
 ===
 
 ###1. Setup Postgis-kmeans
-Postgres 9.4
-postgis 2.1
-Kmeans 1.1.0
+Postgres 9.4    
+postgis 2.1    
+Kmeans 1.1.0    
 [Dockerfile](https://github.com/zhulinpinyu/dockerfiles/blob/master/postgis-with-kmeans/Dockerfile)      
 
 Build Image:
