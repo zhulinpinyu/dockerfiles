@@ -40,3 +40,17 @@ sudo docker run -it -v /data/backup/postgresql:/opt --link postgis:postgres --rm
 ```
 
 > Tips: /data/backup/postgresql is host machine dir
+
+## DevOps Logs
+```shell
+sudo docker load < pk.tar
+sudo docker stop postgis
+sudo docker run --name postgis_t -v /data/postgresql/data:/var/lib/postgresql/data -d -p 5432:5432 postgis-kmeans
+
+// 测试客户端连接 若success
+sudo docker rm postgis
+sudo docker run --name postgis -v /data/postgresql/data:/var/lib/postgresql/data -d -p 5432:5432 postgis-kmeans
+
+//再次测试
+
+```
