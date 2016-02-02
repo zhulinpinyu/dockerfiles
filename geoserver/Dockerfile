@@ -20,10 +20,9 @@ ADD resources /tmp/resources
 
 # A little logic that will fetch the geoserver zip file if it
 # is not available locally in the resources dir and
-RUN if [ ! -f /tmp/resources/geoserver.zip ]; then \
-    wget -c http://sourceforge.net/projects/geoserver/files/GeoServer/2.7.0/geoserver-2.7.0-bin.zip -O /tmp/resources/geoserver.zip; \
-    fi; \
-    unzip /tmp/resources/geoserver.zip -d /opt && mv -v /opt/geoserver* /opt/geoserver
+
+RUN unzip /tmp/resources/geoserver-2.7.0-bin.zip -d /opt && mv -v /opt/geoserver* /opt/geoserver
+RUN unzip /tmp/resources/geoserver-2.7.0-wps-plugin.zip -d /opt/geoserver-2.7.0-wps-plugin && mv /opt/geoserver-2.7.0-wps-plugin/* /opt/geoserver/webapps/geoserver/WEB-INF/lib
 ENV GEOSERVER_HOME /opt/geoserver
 ENV JAVA_HOME /usr/
 
