@@ -9,7 +9,7 @@ MAINTAINER zhulinpinyu "lixiangmu@gmail.com"
 ENV REFRESHED_AT 2015-07-21
 
 # Define variable name
-ENV ES_PKG_NAME elasticsearch-1.6.0
+ENV ES_PKG_NAME elasticsearch-2.3.4
 
 #Install ES
 
@@ -26,7 +26,7 @@ ADD config/elasticsearch.yml /$ES_PKG_NAME/config/elasticsearch.yml
 
 WORKDIR /$ES_PKG_NAME
 
-RUN bin/plugin -i elasticsearch/marvel/latest
+#RUN bin/plugin elasticsearch/marvel/latest
 
 EXPOSE 9200
 EXPOSE 9300
