@@ -1,14 +1,15 @@
-### Build JSON Server Image
+## Build JSON Server Image
 
-#### build image
+### build image
 
 ```
 docker build -t zhulinpinyu/json-server .
 ```
-#### usage
+### usage
 
 ```
 docker run --rm zhulinpinyu/json-server json-server -v
+#0.10.1
 ```
 
 Thanks:    
