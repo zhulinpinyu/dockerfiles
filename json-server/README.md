@@ -1,5 +1,16 @@
 ### Build JSON Server Image
 
+#### build image
+
+```
+docker build -t zhulinpinyu/json-server .
+```
+#### usage
+
+```
+docker run --rm zhulinpinyu/json-server json-server -v
+```
+
 Thanks:    
 [https://github.com/mhart/alpine-node](https://github.com/mhart/alpine-node)    
 [https://github.com/typicode/json-server](https://github.com/typicode/json-server)    
