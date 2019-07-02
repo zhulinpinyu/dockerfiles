@@ -1,23 +1,25 @@
-FROM alpine:3.8 as deps
+FROM alpine:3.10
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/' /etc/apk/repositories && \
     sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd
 
-RUN apk add --no-cache libgomp zlib libpng libjpeg-turbo libwebp tiff lcms2 \
-  freetype fontconfig ghostscript ghostscript-fonts \
-  openexr x265
-
-RUN apk add --no-cache alpine-sdk automake autoconf libtool bash
-RUN apk add --no-cache zlib-dev libpng-dev libjpeg-turbo-dev \
-  freetype-dev fontconfig-dev ghostscript-dev libwebp-dev tiff-dev lcms2-dev \
-  openexr-dev x265-dev
+RUN apk add --no-cache automake \
+        autoconf \
+        libtool \
+        alpine-sdk \
+        libjpeg-turbo \
+        libjpeg-turbo-dev
 
 WORKDIR /work
-RUN git clone -b frame-parallel https://github.com/strukturag/libde265.git
-WORKDIR libde265
-RUN ./autogen.sh && ./configure && make -j8 install
 
-FROM deps as builder
-WORKDIR /work
-RUN git clone https://github.com/strukturag/libheif.git
-WORKDIR libheif
-RUN ./autogen.sh && ./configure && make -j8 install
+RUN git clone -b frame-parallel https://github.com/strukturag/libde265.git --depth 1 \
+    && git clone -b v1.4.0 https://github.com/strukturag/libheif.git --depth 1 \
+    && cd libde265 \
+    && ./autogen.sh \
+    && ./configure \
+    && make -j8 install \
+    && cd ../libheif \
+    && ./autogen.sh \
+    && ./configure \
+    && make -j8 install \
+    && cd .. \
+    && rm -fr libde265 libheif
