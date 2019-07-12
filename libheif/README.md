@@ -1,6 +1,7 @@
 
 构建image
 ```
+docker build -t libheif:v1.3.2-r2 .
 docker build -t libheif:v1.4.0 .
 ```
 
