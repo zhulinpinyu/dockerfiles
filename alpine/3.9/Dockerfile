@@ -7,6 +7,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/' /etc/apk/repositories 
      yarn \
      tzdata \
      exiftool \
+     ffmpeg \
     # libheif-tools \ #alpine 3.9 not support
     && rm -rf /var/cache/apk/*
 
