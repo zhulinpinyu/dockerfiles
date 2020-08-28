@@ -9,7 +9,7 @@ ENV OTP_VERSION="23.0.3" \
 
 RUN set -xe \
     && OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" \
-    && OTP_DOWNLOAD_SHA256="ba12911c731d914edcfcb5f10dd7df8deb1e3aa5ecf222802f644620dffb2db4" \
+    && OTP_DOWNLOAD_SHA256="ed3c25742a2b76407dbb83d40cb95211caad5ab0969681f585a674e2e54840ac" \
     && apk add --no-cache --virtual .fetch-deps curl ca-certificates \
     && curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" \
     && echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - \
