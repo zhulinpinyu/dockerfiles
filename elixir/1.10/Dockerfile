@@ -1,15 +1,15 @@
-FROM alpine:3.12
+FROM alpine:3.11
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/' /etc/apk/repositories
 RUN sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd
 
-ENV OTP_VERSION="23.0.3" \
+ENV OTP_VERSION="22.3.4.9" \
     ELIXIR_VERSION="v1.10.4" \
     LANG=C.UTF-8
 
 RUN set -xe \
     && OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" \
-    && OTP_DOWNLOAD_SHA256="71b2fe49ed5ac386ebc189dd2e5f4b95b11b4427936be0e3c5695a903ea9ffcd" \
+    && OTP_DOWNLOAD_SHA256="ba12911c731d914edcfcb5f10dd7df8deb1e3aa5ecf222802f644620dffb2db4" \
     && apk add --no-cache --virtual .fetch-deps curl ca-certificates \
     && curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" \
     && echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - \
@@ -56,7 +56,7 @@ RUN set -xe \
 
 RUN set -xe \
     && ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" \
-    && ELIXIR_DOWNLOAD_SHA256="dbf4cb66634e22d60fe4aa162946c992257f700c7db123212e7e29d1c0b0c487" \
+    && ELIXIR_DOWNLOAD_SHA256="8518c78f43fe36315dbe0d623823c2c1b7a025c114f3f4adbb48e04ef63f1d9f" \
     && buildDeps=' \
       ca-certificates \
       curl \
