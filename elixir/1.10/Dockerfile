@@ -3,7 +3,7 @@ FROM alpine:3.11
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/' /etc/apk/repositories
 RUN sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd
 
-ENV OTP_VERSION="22.3.4.9" \
+ENV OTP_VERSION="23.0.3" \
     ELIXIR_VERSION="v1.10.4" \
     LANG=C.UTF-8
 
